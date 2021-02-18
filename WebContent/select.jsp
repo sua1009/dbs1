@@ -64,7 +64,7 @@
 				out.println(views + "<br>");
 				out.println(likes + "<br>");
 			} */
-			
+		
 			%>
 			<div class = "container">
 			<table>
@@ -86,7 +86,9 @@
 				
 			</table>
 			</div>
-			<% 
+			<a href="./lists.jsp">목록으로</a>
+			<a href="./modify.jsp?num=<%=num %>">수정하기</a>
+	<% 
 			
 		}catch(SQLException ex){
 			out.println("글 조회를 실패했습니다.<br>");
@@ -98,9 +100,10 @@
 			if (conn != null){
 				conn.close();
 			}
+			if (rs != null){
+				rs.close();
+			}
 		}
-	
-	
 	%>
 </body>
 </html>
